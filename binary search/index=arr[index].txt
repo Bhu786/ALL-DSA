@@ -1,11 +1,18 @@
+Write a function that takes in a sorted array of distinct integers and return the first index in the array that is equal to the value at that index. In the others words, your function should return the minimum index where index == array[index]
 
+If there is no such index, your function should return -1
+
+Sample Input
+Array = [ -5, -3 , 0 , 3 , 4, 5, 9 ]
+
+Sample Output 
+3
+//////////////////////////////////////////////////////////////
+ STILL LOOKING FOR ANSWER....... 
+ 
 #include<bits/stdc++.h>
 using namespace std;
 
-//iska naive approach bhi dekh le vh sahi hai o(n) me hai
-
-//yeh question upper bound and lower bound se bhi ho skta hai
-// because upper and lower bound binary search se hi bnta hai
 
 
 int first(int arr[],int target,int n){
