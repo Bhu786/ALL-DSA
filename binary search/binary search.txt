@@ -1,0 +1,42 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int binearysearch(int arr[],int target,int n){
+	
+	int left=0;
+	int right=n-1;
+	
+	
+	
+	while(left<right){
+		int mid=right+(left-right)/2;
+		
+		if(arr[mid]==target){
+			return mid;
+		}else if(arr[mid]>target){
+			right=mid-1;
+		}else{
+			left=mid+1;
+		}
+	}	
+}
+
+int main(){
+  int n=10;
+  int arr[n]={0,1,21,33,45,45,61,71,72,73};
+  
+  int target=33;
+  
+ int ans= binearysearch(arr,target,n);
+     
+ cout<<ans;
+
+
+return 0;
+}
+
+3
+--------------------------------
+Process exited after 0.06044 seconds with return value 0
+Press any key to continue . . .

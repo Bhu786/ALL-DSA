@@ -1,0 +1,74 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+//iska naive approach bhi dekh le vh sahi hai o(n) me hai
+
+//yeh question upper bound and lower bound se bhi ho skta hai
+// because upper and lower bound binary search se hi bnta hai
+
+
+int first(int arr[],int target,int n){
+	
+	int left=0;
+	int right=n-1;
+	
+	int res=-1;
+	
+	while(left<right){
+		int mid=right+(left-right)/2;
+		
+		if(arr[mid]==target){
+			res= mid;  //mid ko store ke or answer ko store kar ki aage
+            // fir se left me search karna hai fir se answer nikal rahe
+			right=mid-1;//fir se lest me continue
+		}else if(arr[mid]>target){
+			right=mid-1;//same 
+		}else{
+			left=mid+1;
+		}
+		
+	}	
+	
+	return res;	
+}
+
+int last(int arr[],int target,int n){
+	
+	int left=0;
+	int right=n-1;
+	
+	int res=-1;
+	
+	while(left<right){
+		int mid=right+(left-right)/2;
+		
+		if(arr[mid]==target){
+			res=mid;// remember 
+			left=mid+1; //same
+		}else if(arr[mid]>target){
+			right=mid-1;
+		}else{
+			left=mid+1; //same
+		}
+		
+	}	
+	return res;	
+}
+
+int main(){
+  int n=13;
+  int arr[n]={0,1,21,33,45,45,45,45,45,45,61,71,73};
+  
+  int target=45;
+  
+ int ans= first(arr,target,n);
+
+      int ans2= last(arr,target,n);
+ 
+cout<<ans<<" "<<ans2;
+
+return 0;
+}
+
+//5 8
